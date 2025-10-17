@@ -31,9 +31,9 @@ int main (void)
     //button 0, led 0
     if (BTN_check_clear_pressed(BTN0)){
       result = LED_toggle(LED0);
-      if (result != 0 && count_b0<16){
+      if (result == 0 && count_b0<16){
         count_b0++;
-        printk("BUTTON 0 PRESSED");
+        printk("BUTTON 0 PRESSED\ncount_b0: %d\n", count_b0);
       }
       else if (count_b0>=16)
         count_b0=0;
@@ -41,9 +41,9 @@ int main (void)
     //button 1, led 1
     if (BTN_check_clear_pressed(BTN1)){
       result = LED_toggle(LED1);
-      if (result != 0 && count_b1<16){
+      if (result == 0 && count_b1<16){
         count_b1++;
-        printk("BUTTON 1 PRESSED");
+        printk("BUTTON 1 PRESSED\ncount_b1: %d\n", count_b1);
       }
       else  if(count_b1>=16)
         count_b1=0;
@@ -51,9 +51,9 @@ int main (void)
     //button 2, led 2
     if (BTN_check_clear_pressed(BTN2)){
       result = LED_toggle(LED2);
-      if (result != 0 && count_b2<16){
+      if (result == 0 && count_b2<16){
         count_b2++;
-        printk("BUTTON 2 PRESSED");
+        printk("BUTTON 2 PRESSED\ncount_b2: %d\n", count_b2);
       }
       else if (count_b2>=16)
         count_b2=0; 
@@ -61,9 +61,9 @@ int main (void)
     //button 3, led 3
     if (BTN_check_clear_pressed(BTN3)){
       result = LED_toggle(LED3);
-      if (result != 0 && count_b3<16){
+      if (result == 0 && count_b3<16){
         count_b3++;
-        printk("BUTTON 3 PRESSED");
+        printk("BUTTON 3 PRESSED\ncount_b3: %d\n", count_b3);
       }
       else if (count_b3>=16)
         count_b3=0; 
