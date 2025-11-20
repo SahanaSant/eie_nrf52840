@@ -1,0 +1,4 @@
+west:
+  command: C:\Users\sahan\zephyr-projects\.venv\Scripts\west build
+  topdir: C:\Users\sahan\zephyr-projects
+  version: 1.4.0
