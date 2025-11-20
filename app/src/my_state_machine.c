@@ -172,6 +172,7 @@ typedef struct {
     struct smf_ctx ctx;  // must be first
     uint16_t count;      // ms-ish counter used per state
     bool phase;          // general toggle phase
+    uint8_t previous_state;   // NEW: remember where standby should return
 } led_state_object_t;
 
 
@@ -214,6 +215,13 @@ static void state0_entry(void* o)
 static enum smf_state_result state0_run(void *o){ // S0 behavior
      led_state_object_t *s = o;
 
+    if (b0()&&b1()){
+        led_state_object.previous_state = State_0;
+	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
+        printk("Blinking standby mode.");
+        return SMF_EVENT_HANDLED;
+    }
+
     // BTN0 → add a 0 bit
     if (b0()) {
 		    printk("Input as 0.\n");
@@ -241,12 +249,6 @@ static enum smf_state_result state0_run(void *o){ // S0 behavior
         return SMF_EVENT_HANDLED;
     }
     
-    if (b0()&&b1()){
-	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
-        printk("Blinking standby mode.");
-        return SMF_EVENT_HANDLED;
-    }
-
     // Blink LED3 (or LED2 depending on mapping) at 1 Hz
     if (++s->count >= TOGGLE1_MS) {
         s->count = 0;
@@ -289,6 +291,7 @@ static enum smf_state_result state1_run(void *o){ // S1 behavior
     }
     
     if (b0()&&b1()){
+        led_state_object.previous_state = State_1;
 	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
         printk("Blinking standby mode.");
         return SMF_EVENT_HANDLED;
@@ -346,6 +349,7 @@ static enum smf_state_result state2_run(void *o){ // S2 behavior
 	led_state_object_t *s = o;
 
 	if (b0()&&b1()){
+        led_state_object.previous_state = State_2;
 	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
         printk("Blinking standby mode.");
         return SMF_EVENT_HANDLED;
@@ -359,7 +363,15 @@ static enum smf_state_result state2_run(void *o){ // S2 behavior
         return SMF_EVENT_HANDLED;
     }
 
-      if (++s->count >= TOGGLE16_MS) {
+    if (b3()) {
+    printk("Final string: %s\n", ascii_string);
+    // stay in State_2 or go back to State_0 depending on how they expect it
+    // For example:
+    smf_set_state(SMF_CTX(s), &led_states[State_0]);
+    return SMF_EVENT_HANDLED;
+    }
+
+    if (++s->count >= TOGGLE16_MS) {
         s->count = 0;
         s->phase = !s->phase;
         LED_set(LED2, s->phase ? LED_ON : LED_OFF);
@@ -377,7 +389,7 @@ static enum smf_state_result state2_run(void *o){ // S2 behavior
 }
 
 /* ================= State_3: ================= */
-static void state2_entry(void* o)
+static void state3_entry(void* o)
 {
     led_state_object_t *s = o;
     s->count = 0;
@@ -395,7 +407,7 @@ static enum smf_state_result state3_run(void *o){ // S3 behavior
 	led_state_object_t *s = o;
     // If any button clicked → exit standby and return to previous state
     if (b0() || b1() || b2() || b3()) {
-        smf_set_state(SMF_CTX(o), &led_states[previous_state]);
+        smf_set_state(SMF_CTX(o), &led_states[led_state_object.previous_state]);
         return SMF_EVENT_HANDLED;
     }
 
