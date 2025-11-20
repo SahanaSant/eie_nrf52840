@@ -243,6 +243,7 @@ static enum smf_state_result state0_run(void *o){ // S0 behavior
     
     if (b0()&&b1()){
 	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
+        printk("Blinking standby mode.");
         return SMF_EVENT_HANDLED;
     }
 
@@ -250,9 +251,7 @@ static enum smf_state_result state0_run(void *o){ // S0 behavior
     if (++s->count >= TOGGLE1_MS) {
         s->count = 0;
         s->phase = !s->phase;
-        LED_set(LED3, s->phase ? LED_ON : LED_OFF);
-        // if your "LED3" is actually LED2 on the board, use LED2 instead
-        // LED_set(LED2, s->phase ? LED_ON : LED_OFF);
+        LED_set(LED2, s->phase ? LED_ON : LED_OFF);
     }
 
     return SMF_EVENT_HANDLED;
@@ -291,6 +290,7 @@ static enum smf_state_result state1_run(void *o){ // S1 behavior
     
     if (b0()&&b1()){
 	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
+        printk("Blinking standby mode.");
         return SMF_EVENT_HANDLED;
     }
         // BTN0 → add a 0 bit
@@ -316,9 +316,7 @@ static enum smf_state_result state1_run(void *o){ // S1 behavior
      if (++s->count >= TOGGLE4_MS) {
       s->count = 0;
       s->phase = !s->phase;
-      LED_set(LED3, s->phase ? LED_ON : LED_OFF);
-      // if your "LED3" is actually LED2 on the board, use LED2 instead
-      // LED_set(LED2, s->phase ? LED_ON : LED_OFF);
+      LED_set(LED2, s->phase ? LED_ON : LED_OFF);
     }
       return SMF_EVENT_HANDLED;
  }
@@ -343,11 +341,13 @@ static void state2_entry(void* o)
         
 }
 
-static enum smf_state_result state1_run(void *o){ // S2 behavior
+static enum smf_state_result state2_run(void *o){ // S2 behavior
 
 	led_state_object_t *s = o;
+
 	if (b0()&&b1()){
 	    smf_set_state(SMF_CTX(s), &led_states[State_3]);
+        printk("Blinking standby mode.");
         return SMF_EVENT_HANDLED;
     }
    
@@ -362,13 +362,51 @@ static enum smf_state_result state1_run(void *o){ // S2 behavior
       if (++s->count >= TOGGLE16_MS) {
         s->count = 0;
         s->phase = !s->phase;
-        LED_set(LED3, s->phase ? LED_ON : LED_OFF);
-        // If your "LED3" in the spec is actually LED2 on the board, swap to LED2
-        // LED_set(LED2, s->phase ? LED_ON : LED_OFF);
+        LED_set(LED2, s->phase ? LED_ON : LED_OFF);
     }
 
     return SMF_EVENT_HANDLED;
   
 	
 }
- 
+
+ static void state2_exit(void *o)
+{
+    (void)o;
+    /* no teardown required */
+}
+
+/* ================= State_3: ================= */
+static void state2_entry(void* o)
+{
+    led_state_object_t *s = o;
+    s->count = 0;
+    s->phase = false;
+
+    LED_set(LED0, LED_OFF);   // LED1
+    LED_set(LED2, LED_OFF);   // LED3
+    LED_set(LED1, LED_OFF);  // LED2
+    LED_set(LED3, LED_OFF);  // LED4
+        
+}
+
+static enum smf_state_result state3_run(void *o){ // S3 behavior
+
+	led_state_object_t *s = o;
+    // If any button clicked → exit standby and return to previous state
+    if (b0() || b1() || b2() || b3()) {
+        smf_set_state(SMF_CTX(o), &led_states[previous_state]);
+        return SMF_EVENT_HANDLED;
+    }
+
+    // Pulse all LEDs
+    pulse_all_leds();
+
+    return SMF_EVENT_HANDLED;
+}
+
+static void state3_exit(void *o)
+{
+    (void)o;
+    /* no teardown required */
+}
