@@ -7752,9 +7752,9 @@
 #define DT_N_S_pwmleds_S_pwm_led_0_CHILD_IDX 0
 
 /* Helpers for dealing with node labels: */
-#define DT_N_S_pwmleds_S_pwm_led_0_NODELABEL_NUM 1
-#define DT_N_S_pwmleds_S_pwm_led_0_FOREACH_NODELABEL(fn) fn(pwm_led0)
-#define DT_N_S_pwmleds_S_pwm_led_0_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwm_led0, __VA_ARGS__)
+#define DT_N_S_pwmleds_S_pwm_led_0_NODELABEL_NUM 2
+#define DT_N_S_pwmleds_S_pwm_led_0_FOREACH_NODELABEL(fn) fn(pwm_led0) fn(pwmled0)
+#define DT_N_S_pwmleds_S_pwm_led_0_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwm_led0, __VA_ARGS__) fn(pwmled0, __VA_ARGS__)
 #define DT_N_S_pwmleds_S_pwm_led_0_FOREACH_ANCESTOR(fn) fn(DT_N_S_pwmleds) fn(DT_N)
 
 /* Helper macros for child nodes of this node. */
@@ -7788,6 +7788,7 @@
 #define DT_N_S_pwmleds_S_pwm_led_0_EXISTS 1
 #define DT_N_ALIAS_pwm_led0     DT_N_S_pwmleds_S_pwm_led_0
 #define DT_N_NODELABEL_pwm_led0 DT_N_S_pwmleds_S_pwm_led_0
+#define DT_N_NODELABEL_pwmled0  DT_N_S_pwmleds_S_pwm_led_0
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_pwmleds_S_pwm_led_0_REG_NUM 0
@@ -7854,8 +7855,8 @@
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_pwmleds_S_pwm_led_1_NODELABEL_NUM 1
-#define DT_N_S_pwmleds_S_pwm_led_1_FOREACH_NODELABEL(fn) fn(pwm_led1)
-#define DT_N_S_pwmleds_S_pwm_led_1_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwm_led1, __VA_ARGS__)
+#define DT_N_S_pwmleds_S_pwm_led_1_FOREACH_NODELABEL(fn) fn(pwmled1)
+#define DT_N_S_pwmleds_S_pwm_led_1_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwmled1, __VA_ARGS__)
 #define DT_N_S_pwmleds_S_pwm_led_1_FOREACH_ANCESTOR(fn) fn(DT_N_S_pwmleds) fn(DT_N)
 
 /* Helper macros for child nodes of this node. */
@@ -7887,8 +7888,8 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_pwmleds_S_pwm_led_1_EXISTS 1
-#define DT_N_ALIAS_pwm_led1     DT_N_S_pwmleds_S_pwm_led_1
-#define DT_N_NODELABEL_pwm_led1 DT_N_S_pwmleds_S_pwm_led_1
+#define DT_N_ALIAS_pwm_led1    DT_N_S_pwmleds_S_pwm_led_1
+#define DT_N_NODELABEL_pwmled1 DT_N_S_pwmleds_S_pwm_led_1
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_pwmleds_S_pwm_led_1_REG_NUM 0
@@ -7955,8 +7956,8 @@
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_pwmleds_S_pwm_led_2_NODELABEL_NUM 1
-#define DT_N_S_pwmleds_S_pwm_led_2_FOREACH_NODELABEL(fn) fn(pwm_led2)
-#define DT_N_S_pwmleds_S_pwm_led_2_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwm_led2, __VA_ARGS__)
+#define DT_N_S_pwmleds_S_pwm_led_2_FOREACH_NODELABEL(fn) fn(pwmled2)
+#define DT_N_S_pwmleds_S_pwm_led_2_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwmled2, __VA_ARGS__)
 #define DT_N_S_pwmleds_S_pwm_led_2_FOREACH_ANCESTOR(fn) fn(DT_N_S_pwmleds) fn(DT_N)
 
 /* Helper macros for child nodes of this node. */
@@ -7988,8 +7989,8 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_pwmleds_S_pwm_led_2_EXISTS 1
-#define DT_N_ALIAS_pwm_led2     DT_N_S_pwmleds_S_pwm_led_2
-#define DT_N_NODELABEL_pwm_led2 DT_N_S_pwmleds_S_pwm_led_2
+#define DT_N_ALIAS_pwm_led2    DT_N_S_pwmleds_S_pwm_led_2
+#define DT_N_NODELABEL_pwmled2 DT_N_S_pwmleds_S_pwm_led_2
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_pwmleds_S_pwm_led_2_REG_NUM 0
@@ -8056,8 +8057,8 @@
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_pwmleds_S_pwm_led_3_NODELABEL_NUM 1
-#define DT_N_S_pwmleds_S_pwm_led_3_FOREACH_NODELABEL(fn) fn(pwm_led3)
-#define DT_N_S_pwmleds_S_pwm_led_3_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwm_led3, __VA_ARGS__)
+#define DT_N_S_pwmleds_S_pwm_led_3_FOREACH_NODELABEL(fn) fn(pwmled3)
+#define DT_N_S_pwmleds_S_pwm_led_3_FOREACH_NODELABEL_VARGS(fn, ...) fn(pwmled3, __VA_ARGS__)
 #define DT_N_S_pwmleds_S_pwm_led_3_FOREACH_ANCESTOR(fn) fn(DT_N_S_pwmleds) fn(DT_N)
 
 /* Helper macros for child nodes of this node. */
@@ -8089,8 +8090,8 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_pwmleds_S_pwm_led_3_EXISTS 1
-#define DT_N_ALIAS_pwm_led3     DT_N_S_pwmleds_S_pwm_led_3
-#define DT_N_NODELABEL_pwm_led3 DT_N_S_pwmleds_S_pwm_led_3
+#define DT_N_ALIAS_pwm_led3    DT_N_S_pwmleds_S_pwm_led_3
+#define DT_N_NODELABEL_pwmled3 DT_N_S_pwmleds_S_pwm_led_3
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_pwmleds_S_pwm_led_3_REG_NUM 0

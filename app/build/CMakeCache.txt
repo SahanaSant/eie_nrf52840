@@ -614,8 +614,6 @@ _Python3_EXECUTABLE_DEBUG:INTERNAL=_Python3_EXECUTABLE_DEBUG-NOTFOUND
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;9;64;<none>;cp313-win_amd64.pyd;;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib;C:\Users\sahan\zephyr-projects\.venv\Lib;C:\Users\sahan\zephyr-projects\.venv\Lib\site-packages;C:\Users\sahan\zephyr-projects\.venv\Lib\site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=bfa86f43f44e67a5a0af31872a450234
-//Interpreter reason failure
-_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

@@ -38,10 +38,10 @@
 		mcuboot-button0 = &button0; /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:139 */
 		mcuboot-led0 = &led0;       /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:140 */
 		watchdog0 = &wdt0;          /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:141 */
-		pwm-led0 = &pwm_led0;       /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:23 */
-		pwm-led1 = &pwm_led1;       /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:24 */
-		pwm-led2 = &pwm_led2;       /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:25 */
-		pwm-led3 = &pwm_led3;       /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:26 */
+		pwm-led0 = &pwmled0;        /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:23 */
+		pwm-led1 = &pwmled1;        /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:24 */
+		pwm-led2 = &pwmled2;        /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:25 */
+		pwm-led3 = &pwmled3;        /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:26 */
 	};
 
 	/* node '/soc' defined in zephyr\dts\arm\armv7-m.dtsi:6 */
@@ -1156,25 +1156,25 @@
 		compatible = "pwm-leds"; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:3 */
 
 		/* node '/pwmleds/pwm_led_0' defined in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:54 */
-		pwm_led0: pwm_led_0 {
+		pwm_led0: pwmled0: pwm_led_0 {
 			pwms = < &pwm0 0x0 0x1312d00 0x0 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:5 */
 			label = "PWM LED 0";                /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:6 */
 		};
 
 		/* node '/pwmleds/pwm_led_1' defined in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:8 */
-		pwm_led1: pwm_led_1 {
+		pwmled1: pwm_led_1 {
 			pwms = < &pwm0 0x1 0x1312d00 0x0 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:9 */
 			label = "PWM LED 1";                /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:10 */
 		};
 
 		/* node '/pwmleds/pwm_led_2' defined in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:12 */
-		pwm_led2: pwm_led_2 {
+		pwmled2: pwm_led_2 {
 			pwms = < &pwm0 0x2 0x1312d00 0x0 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:13 */
 			label = "PWM LED 2";                /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:14 */
 		};
 
 		/* node '/pwmleds/pwm_led_3' defined in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:16 */
-		pwm_led3: pwm_led_3 {
+		pwmled3: pwm_led_3 {
 			pwms = < &pwm0 0x3 0x1312d00 0x0 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:17 */
 			label = "PWM LED 3";                /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:18 */
 		};
