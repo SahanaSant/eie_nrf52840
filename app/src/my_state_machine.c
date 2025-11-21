@@ -404,7 +404,7 @@ static void state3_entry(void* o)
 
 static enum smf_state_result state3_run(void *o){ // S3 behavior
 
-	led_state_object_t *s = o;
+	//led_state_object_t *s = o;
     // If any button clicked → exit standby and return to previous state
     if (b0() || b1() || b2() || b3()) {
         smf_set_state(SMF_CTX(o), &led_states[led_state_object.previous_state]);
