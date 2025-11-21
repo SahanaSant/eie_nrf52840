@@ -80,14 +80,18 @@ BT_GATT_SERVICE_DEFINE(
 
 /* FUNCTIONS ------------------------------------------------------------------------------------ */
 
-static ssize_t ble_custom_service_read(struct bt_conn* conn, const struct bt_gatt_attr* attr,
-                                       void* buf, uint16_t len, uint16_t offset) {
-  // Send the data that is stored in the characteristic ("EiE" by default, can change if written to)
-  // by fetching it directly from the characteristic object
-  const char* data_to_send_to_connected_device = attr->user_data;
+static ssize_t ble_custom_service_read(struct bt_conn* conn,
+                                       const struct bt_gatt_attr* attr,
+                                       void* buf, uint16_t len, uint16_t offset)
+{
+    // Treat user_data as a C string stored in our characteristic buffer
+    const char *data = (const char *)attr->user_data;
 
-  return bt_gatt_attr_read(conn, attr, buf, len, offset, data_to_send_to_connected_device,
-                           strlen(data_to_send_to_connected_device));
+    // Safe length: don’t read past the buffer
+    size_t data_len = strnlen(data, BLE_CUSTOM_CHARACTERISTIC_MAX_DATA_LENGTH);
+
+    // Let Zephyr copy it out to the client
+    return bt_gatt_attr_read(conn, attr, buf, len, offset, data, data_len);
 }
 
 static ssize_t ble_custom_service_write(struct bt_conn* conn, const struct bt_gatt_attr* attr,
@@ -110,11 +114,11 @@ static ssize_t ble_custom_service_write(struct bt_conn* conn, const struct bt_ga
   printk("\n");
 
   //LED Triggering logic
-  if (strcmp((char *)value, "LED ON")==0){
+  if (strncmp((char *)value, "LED ON", 6)==0){
     LED_set(LED0, LED_ON);
     printk("LED TOGGLED ON\n");
   }
-  if (strcmp((char *)value, "LED OFF")==0){
+  if (strncmp((char *)value, "LED OFF", 7)==0){
     LED_set(LED0, LED_OFF);
     printk("LED TOGGLED OFF\n");
   }
@@ -125,8 +129,10 @@ static ssize_t ble_custom_service_write(struct bt_conn* conn, const struct bt_ga
 
 static void ble_custom_service_notify() {
   static uint32_t counter = 0;
-  bt_gatt_notify(NULL, &ble_custom_service.attrs[2], &counter, sizeof(counter));
-  counter++;
+  bt_gatt_notify(NULL, &ble_custom_service.attrs[2],
+               ble_custom_characteristic_user_data,
+               strlen((char*)ble_custom_characteristic_user_data));
+  counter++; 
 }
 
 /* MAIN ----------------------------------------------------------------------------------------- */
