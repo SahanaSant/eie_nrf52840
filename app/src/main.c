@@ -18,6 +18,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/settings/settings.h>
 #include <zephyr/sys/printk.h>
+#include "LED.h"
 
 /* MACROS --------------------------------------------------------------------------------------- */
 
@@ -107,6 +108,17 @@ static ssize_t ble_custom_service_write(struct bt_conn* conn, const struct bt_ga
     printk("%s %02X '%c'", i == 0 ? "" : ",", value[offset + i], value[offset + i]);
   }
   printk("\n");
+
+  //LED Triggering logic
+  if (strcmp(value, "LED ON")==0){
+    LED_set(LED0, LED_ON);
+    printk("LED TOGGLED ON\n");
+  }
+  if (strcmp(value, "LED OFF")==0){
+    LED_set(LED0, LED_OFF);
+    printk("LED TOGGLED OFF\n");
+  }
+
 
   return len;
 }
