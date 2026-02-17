@@ -231,6 +231,9 @@ C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.g
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/BTN/CMakeFiles/..__eie_nrf52840.git__drivers__BTN.dir
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/BTN/CMakeFiles/edit_cache.dir
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/BTN/CMakeFiles/rebuild_cache.dir
+C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LED/CMakeFiles/..__eie_nrf52840.git__drivers__LED.dir
+C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LED/CMakeFiles/edit_cache.dir
+C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LED/CMakeFiles/rebuild_cache.dir
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LCD/CMakeFiles/..__eie_nrf52840.git__drivers__LCD.dir
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LCD/CMakeFiles/edit_cache.dir
 C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LCD/CMakeFiles/rebuild_cache.dir

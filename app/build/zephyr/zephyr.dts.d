@@ -29,7 +29,7 @@ empty_file.o: C:/Users/sahan/zephyr-projects/zephyr/misc/empty_file.c \
  C:/Users/sahan/zephyr-projects/zephyr/include/zephyr/dt-bindings/regulator/nrf5x.h \
  C:/Users/sahan/zephyr-projects/zephyr/dts/vendor/nordic/nrf52840_partition.dtsi \
  C:/Users/sahan/zephyr-projects/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840-pinctrl.dtsi \
- C:/Users/sahan/zephyr-projects/zephyr/boards/shields/buydisplay_2_8_tft_touch_arduino/buydisplay_2_8_tft_touch_arduino.overlay \
+ C:/Users/sahan/zephyr-projects/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/adafruit_2_8_tft_touch_v2.overlay \
+ C:/Users/sahan/zephyr-projects/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi \
  C:/Users/sahan/zephyr-projects/zephyr/include/zephyr/dt-bindings/display/ili9xxx.h \
- C:/Users/sahan/zephyr-projects/zephyr/boards/shields/buydisplay_2_8_tft_touch_arduino/boards/nrf52840dk_nrf52840.overlay \
  C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/boards/nrf52840dk_nrf52840.overlay

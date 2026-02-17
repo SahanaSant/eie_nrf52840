@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/BTN/cmake_install.cmake")
+  include("C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LED/cmake_install.cmake")
   include("C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LCD/cmake_install.cmake")
 
 endif()

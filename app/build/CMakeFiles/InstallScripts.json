@@ -87,6 +87,7 @@
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/cmake_install.cmake",
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/cmake_install.cmake",
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/BTN/cmake_install.cmake",
+		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LED/cmake_install.cmake",
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/eie_nrf52840.git/drivers/LCD/cmake_install.cmake",
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/cmsis_6/cmake_install.cmake",
 		"C:/Users/sahan/zephyr-projects/eie_nrf52840.git/app/build/modules/cmsis_6/cmsis_6/cmake_install.cmake",

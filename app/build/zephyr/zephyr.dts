@@ -9,21 +9,21 @@
 
 	/* node '/chosen' defined in zephyr\dts\common\skeleton.dtsi:12 */
 	chosen {
-		zephyr,bt-hci = &bt_hci_controller;                         /* in zephyr\dts\arm\nordic\nrf52840.dtsi:10 */
-		zephyr,entropy = &rng;                                      /* in zephyr\dts\arm\nordic\nrf52840.dtsi:11 */
-		zephyr,flash-controller = &flash_controller;                /* in zephyr\dts\arm\nordic\nrf52840.dtsi:12 */
-		zephyr,sram = &sram0;                                       /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:9 */
-		zephyr,flash = &flash0;                                     /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:10 */
-		zephyr,code-partition = &slot0_partition;                   /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:11 */
-		zephyr,console = &uart0;                                    /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:18 */
-		zephyr,shell-uart = &uart0;                                 /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:19 */
-		zephyr,uart-mcumgr = &uart0;                                /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:20 */
-		zephyr,bt-mon-uart = &uart0;                                /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:21 */
-		zephyr,bt-c2h-uart = &uart0;                                /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:22 */
-		zephyr,ieee802154 = &ieee802154;                            /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:23 */
-		zephyr,boot-mode = &boot_mode0;                             /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:24 */
-		zephyr,display = &ili9340_buydisplay_2_8_tft_touch_arduino; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:11 */
-		zephyr,touch = &ft5336_buydisplay_2_8_tft_touch_arduino;    /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:12 */
+		zephyr,bt-hci = &bt_hci_controller;                  /* in zephyr\dts\arm\nordic\nrf52840.dtsi:10 */
+		zephyr,entropy = &rng;                               /* in zephyr\dts\arm\nordic\nrf52840.dtsi:11 */
+		zephyr,flash-controller = &flash_controller;         /* in zephyr\dts\arm\nordic\nrf52840.dtsi:12 */
+		zephyr,sram = &sram0;                                /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:9 */
+		zephyr,flash = &flash0;                              /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:10 */
+		zephyr,code-partition = &slot0_partition;            /* in zephyr\dts\vendor\nordic\nrf52840_partition.dtsi:11 */
+		zephyr,console = &uart0;                             /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:18 */
+		zephyr,shell-uart = &uart0;                          /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:19 */
+		zephyr,uart-mcumgr = &uart0;                         /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:20 */
+		zephyr,bt-mon-uart = &uart0;                         /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:21 */
+		zephyr,bt-c2h-uart = &uart0;                         /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:22 */
+		zephyr,ieee802154 = &ieee802154;                     /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:23 */
+		zephyr,boot-mode = &boot_mode0;                      /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:24 */
+		zephyr,display = &adafruit_2_8_tft_touch_v2_ili9340; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:11 */
+		zephyr,touch = &ft5336_adafruit_2_8_tft_touch_v2;    /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:12 */
 	};
 
 	/* node '/aliases' defined in zephyr\dts\common\skeleton.dtsi:13 */
@@ -208,11 +208,11 @@
 			pinctrl-names = "default",
 			                "sleep";        /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:206 */
 
-			/* node '/soc/i2c@40003000/ft5336@38' defined in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:56 */
-			ft5336_buydisplay_2_8_tft_touch_arduino: ft5336@38 {
-				compatible = "focaltech,ft5336"; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:57 */
-				reg = < 0x38 >;                  /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:58 */
-				phandle = < 0x1d >;              /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:17 */
+			/* node '/soc/i2c@40003000/ft5336@38' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:68 */
+			ft5336_adafruit_2_8_tft_touch_v2: ft5336@38 {
+				compatible = "focaltech,ft5336"; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:69 */
+				reg = < 0x38 >;                  /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:70 */
+				phandle = < 0x1d >;              /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:17 */
 			};
 		};
 
@@ -257,11 +257,11 @@
 			max-frequency = < 0x7a1200 >;   /* in zephyr\dts\arm\nordic\nrf52840.dtsi:200 */
 			easydma-maxcnt-bits = < 0x10 >; /* in zephyr\dts\arm\nordic\nrf52840.dtsi:201 */
 			compatible = "nordic,nrf-spi";  /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:235 */
+			status = "okay";                /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:236 */
 			pinctrl-0 = < &spi1_default >;  /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:237 */
 			pinctrl-1 = < &spi1_sleep >;    /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:238 */
 			pinctrl-names = "default",
 			                "sleep";        /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:239 */
-			status = "disabled";            /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\boards\nrf52840dk_nrf52840.overlay:9 */
 		};
 
 		/* node '/soc/nfct@40005000' defined in zephyr\dts\arm\nordic\nrf52840.dtsi:205 */
@@ -699,22 +699,38 @@
 
 		/* node '/soc/spi@4002f000' defined in zephyr\dts\arm\nordic\nrf52840.dtsi:534 */
 		spi3: arduino_spi: spi@4002f000 {
-			compatible = "nordic,nrf-spim";         /* in zephyr\dts\arm\nordic\nrf52840.dtsi:535 */
-			#address-cells = < 0x1 >;               /* in zephyr\dts\arm\nordic\nrf52840.dtsi:536 */
-			#size-cells = < 0x0 >;                  /* in zephyr\dts\arm\nordic\nrf52840.dtsi:537 */
-			reg = < 0x4002f000 0x1000 >;            /* in zephyr\dts\arm\nordic\nrf52840.dtsi:538 */
-			interrupts = < 0x2f 0x1 >;              /* in zephyr\dts\arm\nordic\nrf52840.dtsi:539 */
-			max-frequency = < 0x1e84800 >;          /* in zephyr\dts\arm\nordic\nrf52840.dtsi:540 */
-			easydma-maxcnt-bits = < 0x10 >;         /* in zephyr\dts\arm\nordic\nrf52840.dtsi:541 */
-			rx-delay-supported;                     /* in zephyr\dts\arm\nordic\nrf52840.dtsi:542 */
-			rx-delay = < 0x2 >;                     /* in zephyr\dts\arm\nordic\nrf52840.dtsi:543 */
-			pinctrl-0 = < &spi3_default >;          /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:281 */
-			pinctrl-1 = < &spi3_sleep >;            /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:282 */
+			compatible = "nordic,nrf-spim";          /* in zephyr\dts\arm\nordic\nrf52840.dtsi:535 */
+			#address-cells = < 0x1 >;                /* in zephyr\dts\arm\nordic\nrf52840.dtsi:536 */
+			#size-cells = < 0x0 >;                   /* in zephyr\dts\arm\nordic\nrf52840.dtsi:537 */
+			reg = < 0x4002f000 0x1000 >;             /* in zephyr\dts\arm\nordic\nrf52840.dtsi:538 */
+			interrupts = < 0x2f 0x1 >;               /* in zephyr\dts\arm\nordic\nrf52840.dtsi:539 */
+			max-frequency = < 0x1e84800 >;           /* in zephyr\dts\arm\nordic\nrf52840.dtsi:540 */
+			easydma-maxcnt-bits = < 0x10 >;          /* in zephyr\dts\arm\nordic\nrf52840.dtsi:541 */
+			rx-delay-supported;                      /* in zephyr\dts\arm\nordic\nrf52840.dtsi:542 */
+			rx-delay = < 0x2 >;                      /* in zephyr\dts\arm\nordic\nrf52840.dtsi:543 */
+			pinctrl-0 = < &spi3_default >;           /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:281 */
+			pinctrl-1 = < &spi3_sleep >;             /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:282 */
 			pinctrl-names = "default",
-			                "sleep";                /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:283 */
-			status = "okay";                        /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:51 */
-			cs-gpios = < &arduino_header 0xf 0x1 >; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:52 */
-			phandle = < 0x1e >;                     /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:27 */
+			                "sleep";                 /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:283 */
+			status = "okay";                         /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:50 */
+			cs-gpios = < &arduino_header 0x10 0x1 >,
+			           < &arduino_header 0xa 0x1 >;  /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:51 */
+			phandle = < 0x1e >;                      /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:25 */
+
+			/* node '/soc/spi@4002f000/sdhc@1' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:54 */
+			adafruit_2_8_tft_touch_v2_sdhc: sdhc@1 {
+				compatible = "zephyr,sdhc-spi-slot"; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:55 */
+				reg = < 0x1 >;                       /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:56 */
+				status = "okay";                     /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:57 */
+				spi-max-frequency = < 0x16e3600 >;   /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:58 */
+
+				/* node '/soc/spi@4002f000/sdhc@1/mmc' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:59 */
+				mmc {
+					compatible = "zephyr,sdmmc-disk"; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:60 */
+					disk-name = "SD";                 /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:61 */
+					status = "okay";                  /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:62 */
+				};
+			};
 		};
 
 		/* node '/soc/gpio@50000000' defined in zephyr\dts\arm\nordic\nrf52840.dtsi:547 */
@@ -922,10 +938,10 @@
 
 			/* node '/pin-controller/pwm0_default/group1' defined in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840-pinctrl.dtsi:80 */
 			group1 {
-				psels = < 0x16000004 >,
-				        < 0x17000005 >,
-				        < 0x18000006 >,
-				        < 0x19000007 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:22 */
+				psels = < 0x1600000d >,
+				        < 0x1700000e >,
+				        < 0x1800000f >,
+				        < 0x19000010 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:22 */
 				nordic,invert;          /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:27 */
 			};
 		};
@@ -936,10 +952,10 @@
 
 			/* node '/pin-controller/pwm0_sleep/group1' defined in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840-pinctrl.dtsi:87 */
 			group1 {
-				psels = < 0x16000004 >,
-				        < 0x17000005 >,
-				        < 0x18000006 >,
-				        < 0x19000007 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:33 */
+				psels = < 0x1600000d >,
+				        < 0x1700000e >,
+				        < 0x1800000f >,
+				        < 0x19000010 >; /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:33 */
 				low-power-enable;       /* in eie_nrf52840.git\app\boards\nrf52840dk_nrf52840.overlay:38 */
 			};
 		};
@@ -1251,7 +1267,7 @@
 		           < 0x13 0x0 &gpio1 0xf 0x0 >,
 		           < 0x14 0x0 &gpio0 0x1a 0x0 >,
 		           < 0x15 0x0 &gpio0 0x1b 0x0 >;   /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:92 */
-		phandle = < 0x16 >;                        /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:52 */
+		phandle = < 0x16 >;                        /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:51 */
 	};
 
 	/* node '/analog-connector' defined in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:116 */
@@ -1266,40 +1282,39 @@
 		                 < 0x5 &adc 0x7 >; /* in zephyr\boards\nordic\nrf52840dk\nrf52840dk_nrf52840.dts:119 */
 	};
 
-	/* node '/lvgl_pointer' defined in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:15 */
+	/* node '/lvgl_pointer' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:15 */
 	lvgl_pointer {
-		compatible = "zephyr,lvgl-pointer-input";             /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:16 */
-		input = < &ft5336_buydisplay_2_8_tft_touch_arduino >; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:17 */
-		swap-xy;                                              /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:18 */
-		invert-x;                                             /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:19 */
-		invert-y;                                             /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:20 */
+		compatible = "zephyr,lvgl-pointer-input";      /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:16 */
+		input = < &ft5336_adafruit_2_8_tft_touch_v2 >; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:17 */
+		swap-xy;                                       /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:18 */
+		invert-x;                                      /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:19 */
+		invert-y;                                      /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:20 */
 	};
 
-	/* node '/buydisplay_2_8_tft_touch_arduino_mipi_dbi' defined in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:23 */
-	buydisplay_2_8_tft_touch_arduino_mipi_dbi {
-		compatible = "zephyr,mipi-dbi-spi";         /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:24 */
-		dc-gpios = < &arduino_header 0xd 0x0 >;     /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:25 */
-		reset-gpios = < &arduino_header 0x10 0x1 >; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:26 */
-		spi-dev = < &arduino_spi >;                 /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:27 */
-		write-only;                                 /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:28 */
-		#address-cells = < 0x1 >;                   /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:29 */
-		#size-cells = < 0x0 >;                      /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:30 */
+	/* node '/adafruit_2_8_tft_touch_v2_mipi_dbi' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:23 */
+	adafruit_2_8_tft_touch_v2_mipi_dbi: adafruit_2_8_tft_touch_v2_mipi_dbi {
+		compatible = "zephyr,mipi-dbi-spi";     /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:24 */
+		spi-dev = < &arduino_spi >;             /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:25 */
+		dc-gpios = < &arduino_header 0xf 0x0 >; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:26 */
+		write-only;                             /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:27 */
+		#address-cells = < 0x1 >;               /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:28 */
+		#size-cells = < 0x0 >;                  /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:29 */
 
-		/* node '/buydisplay_2_8_tft_touch_arduino_mipi_dbi/ili9340@0' defined in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:32 */
-		ili9340_buydisplay_2_8_tft_touch_arduino: ili9340@0 {
-			compatible = "ilitek,ili9340";                               /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:33 */
-			mipi-max-frequency = < 0x17d7840 >;                          /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:34 */
-			reg = < 0x0 >;                                               /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:35 */
-			width = < 0xf0 >;                                            /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:36 */
-			height = < 0x140 >;                                          /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:37 */
-			pixel-format = < 0x0 >;                                      /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:38 */
-			rotation = < 0x0 >;                                          /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:39 */
-			frmctr1 = [ 00 18 ];                                         /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:40 */
-			pwctrl1 = [ 23 00 ];                                         /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:41 */
-			vmctrl1 = [ 3E 28 ];                                         /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:42 */
-			vmctrl2 = [ 86 ];                                            /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:43 */
-			pgamctrl = [ 0F 31 2B 0C 0E 08 4E F1 37 07 10 03 0E 09 00 ]; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:44 */
-			ngamctrl = [ 00 0E 14 03 11 07 31 C1 48 08 0F 0C 31 36 0F ]; /* in zephyr\boards\shields\buydisplay_2_8_tft_touch_arduino\buydisplay_2_8_tft_touch_arduino.overlay:45 */
+		/* node '/adafruit_2_8_tft_touch_v2_mipi_dbi/ili9340@0' defined in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:31 */
+		adafruit_2_8_tft_touch_v2_ili9340: ili9340@0 {
+			compatible = "ilitek,ili9340";                               /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:32 */
+			mipi-max-frequency = < 0xe7319b >;                           /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:33 */
+			reg = < 0x0 >;                                               /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:34 */
+			width = < 0x140 >;                                           /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:35 */
+			height = < 0xf0 >;                                           /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:36 */
+			pixel-format = < 0x1 >;                                      /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:37 */
+			rotation = < 0x5a >;                                         /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:38 */
+			frmctr1 = [ 00 18 ];                                         /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:39 */
+			pwctrl1 = [ 23 00 ];                                         /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:40 */
+			vmctrl1 = [ 3E 28 ];                                         /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:41 */
+			vmctrl2 = [ 86 ];                                            /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:42 */
+			pgamctrl = [ 0F 31 2B 0C 0E 08 4E F1 37 07 10 03 0E 09 00 ]; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:43 */
+			ngamctrl = [ 00 0E 14 03 11 07 31 C1 48 08 0F 0C 31 36 0F ]; /* in zephyr\boards\shields\adafruit_2_8_tft_touch_v2\dts\adafruit_2_8_tft_touch_v2.dtsi:44 */
 		};
 	};
 };
